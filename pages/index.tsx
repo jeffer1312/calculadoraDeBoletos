@@ -17,10 +17,12 @@ import {
   InputGroup,
   Row,
   Col,
+  Media,
 } from 'reactstrap';
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
 import Link from 'next/link';
+import '../public/logo.jpeg';
 const Home: NextPage = () => {
   const { handleSubmit, control } = useForm();
   const cardStyle = { width: '18rem' };
@@ -73,6 +75,24 @@ const Home: NextPage = () => {
           <Col xs='1' sm=' 1'></Col>
           <Col xs='10'>
             <Card>
+              <div
+                style={{ width: '100%', backgroundColor: '#ffb964' }}
+                className='d-flex justify-content-center'
+              >
+                <div>
+                  <img
+                    style={{
+                      border: '1px solid #ccc',
+                      width: '200px',
+                      height: '200px',
+                      borderRadius: '150px',
+                    }}
+                    className='rounded-circle'
+                    alt='...'
+                    src='/logo.jpeg'
+                  />{' '}
+                </div>
+              </div>
               <Form onSubmit={handleSubmit(SubmitForm)} className='p-2'>
                 <FormGroup>
                   <Label for='exampleEmail'>Valor</Label>
@@ -118,8 +138,11 @@ const Home: NextPage = () => {
                   />
                 </FormGroup>
                 <div className='d-flex flex-column'>
-                  <Button color='primary' type='submit'>
-                    Calcular
+                  <Button
+                    style={{ backgroundColor: '#ffae4a', border: '0' }}
+                    type='submit'
+                  >
+                    <strong>Calcular</strong>
                   </Button>
                 </div>
               </Form>
@@ -127,8 +150,14 @@ const Home: NextPage = () => {
               <div className='p-2'>
                 <Link href='https://app.celcoin.com.br/painel/home'>
                   <a target='_blank'>
-                    <Button style={{ width: '100%' }} color='primary'>
-                      Ir para o painel de pagamento
+                    <Button
+                      style={{
+                        width: '100%',
+                        backgroundColor: '#eb830d',
+                        border: '0',
+                      }}
+                    >
+                      <strong>Pagar</strong>
                     </Button>
                   </a>
                 </Link>
