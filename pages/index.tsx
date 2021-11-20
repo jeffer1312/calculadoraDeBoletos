@@ -20,7 +20,7 @@ import {
 } from 'reactstrap';
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
-
+import Link from 'next/link';
 const Home: NextPage = () => {
   const { handleSubmit, control } = useForm();
   const cardStyle = { width: '18rem' };
@@ -117,10 +117,23 @@ const Home: NextPage = () => {
                     name='Parcelas'
                   />
                 </FormGroup>
-                <Button color='primary' type='submit'>
-                  Calcular
-                </Button>
+                <div className='d-flex flex-column'>
+                  <Button color='primary' type='submit'>
+                    Calcular
+                  </Button>
+                </div>
               </Form>
+
+              <div className='p-2'>
+                <Link href='https://app.celcoin.com.br/painel/home'>
+                  <a target='_blank'>
+                    <Button style={{ width: '100%' }} color='primary'>
+                      Ir para o painel de pagamento
+                    </Button>
+                  </a>
+                </Link>
+              </div>
+
               {valorFinal && valorParcela && valorComissao && (
                 <CardBody>
                   <div className='d-flex justify-content-center flex-column '>
