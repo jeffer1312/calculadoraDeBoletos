@@ -10,3 +10,4 @@ Aplicação Simples para calcular dados de boletos de um parceiro que pediu essa
 
 
 
+![Screenshot](image.png)
